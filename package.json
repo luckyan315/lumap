@@ -1,7 +1,7 @@
 {
     "name": "lumap",
     "version": "0.0.1",
-    "description": "wechat public account service",
+    "description": "common skel http server for node.js ",
     "main": "server.js",
     "dependencies": {
 	"express": "3.x",
