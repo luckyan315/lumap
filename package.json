@@ -1,5 +1,5 @@
 {
-    "name": "wechat_server",
+    "name": "lumap",
     "version": "0.0.1",
     "description": "wechat public account service",
     "main": "server.js",
