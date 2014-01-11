@@ -1,8 +1,12 @@
-
 /**
  * sign in / up /out
  * @Copyright (c) 2014, guanglin.an (lucky315.an@gmail.com)
  */
+"use strict";
+
+var User = require('../db/user');
+var common = require('./util/common');
+var formalize = common.formalize;
 
 function getLogin(req, res, next){
   //TODO: render login page
@@ -21,6 +25,16 @@ function getRegister(req, res, next){
 
 function register(req, res, next){
   //TODO: register
+
+  var name = formalize(req.body.name);
+  var password = formalize(req.body.password);
+  var re_pw = formalize(req.body.re_pw);
+  var email = formalize(req.body.email);
+
+  User.getUserByName(name, function(user){
+    
+  });
+  
   res.send('register success!');
 }
 
