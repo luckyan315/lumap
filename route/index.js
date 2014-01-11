@@ -16,7 +16,7 @@ var sign = require('./sign');
 var app = module.parent.exports.app;
 
 app.get('/login', sign.getLogin);
-app.get('/login', sign.login);
+app.post('/login', sign.login);
 app.get('/reg', sign.getRegister);
 app.post('/reg', sign.register);
 app.get('/logout', sign.logout);

@@ -1,4 +1,4 @@
-var User = require('../model/user');
+var User = require('../model').User;
 
 function getUserByName(name , cb){
   User.findOne({name: name}, cb);
@@ -13,5 +13,5 @@ function save(name, password, email, cb){
   user.save(cb);
 };
 
-module.exports.save = save;
-module.exports.getUserByName = getUserByName;
+exports.save = save;
+exports.getUserByName = getUserByName;
