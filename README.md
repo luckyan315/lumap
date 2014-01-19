@@ -13,6 +13,8 @@ common web server framework
   7. Support SSL (https/http)
   8. hook "ctrl + c" , do some shutdown ops
   9. node service
+  10. XMPP 
+  11. comet
      
   
 * TODO list for demo app (RFP by choi)

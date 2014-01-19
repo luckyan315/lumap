@@ -9,12 +9,12 @@ var common = require('../util/common');
 var formalize = common.formalize;
 var encrypt_md5 = common.encrypt_md5;
 
-function getLogin(req, res, next){
+exports.getLogin = function(req, res, next){
   //TODO: render login page
   res.render('login');
-}
+};
 
-function login(req, res, next){
+exports.login = function(req, res, next){
   //TODO: login
   var name = formalize(req.body.name);
   var password = formalize(req.body.password);
@@ -29,14 +29,14 @@ function login(req, res, next){
     }
     return res.send('login success!');
   });
-}
+};
 
-function getRegister(req, res, next){
+exports.getRegister = function (req, res, next){
   //TODO: render reg page
   res.render('reg');
-}
+};
 
-function register(req, res, next){
+exports.register = function (req, res, next){
   //TODO: register
 
   var name = formalize(req.body.name);
@@ -66,15 +66,9 @@ function register(req, res, next){
     });
   });
   
-}
+};
 
-function logout(req, res, next){
+exports.logout = function (req, res, next){
   //TODO: logout
   res.end('logout success!');
-}
-
-module.exports.getLogin = getLogin;
-module.exports.login = login;
-module.exports.getRegister = getRegister;
-module.exports.register = register;
-module.exports.logout = logout;
+};

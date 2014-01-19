@@ -1,10 +1,10 @@
 var User = require('../model').User;
 
-function getUserByName(name , cb){
+exports.getUserByName = function (name , cb){
   User.findOne({name: name}, cb);
 };
 
-function save(name, password, email, cb){
+exports.save = function (name, password, email, cb){
   var user = new User();
   user.name = name;
   user.password = password;
@@ -12,6 +12,3 @@ function save(name, password, email, cb){
 
   user.save(cb);
 };
-
-exports.save = save;
-exports.getUserByName = getUserByName;
