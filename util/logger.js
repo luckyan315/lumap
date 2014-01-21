@@ -8,15 +8,15 @@
 var slice = Array.prototype.slice;
 var unshift = Array.prototype.unshift;
 
-var logger = exports = module.exports = function(level) {
+var logger = exports = module.exports = function(type) {
   var args = slice.call(arguments, 1);
 
-  level = logger.levels[level];
+  var level = logger.levels[type];
 
   //coloring log
   var prefix =
     '\x1b[' + level[0] + 'm' +
-    logger.PREFIX +
+    '[' + type + ']' +
     '[' + format_date(new Date(), true) + ']' +
     '\x1b[m ';
 
@@ -51,7 +51,7 @@ logger.BG_WHITE = 47;
 
 logger.levels = {
   'info': [logger.FORE_BLUE, 'info'],
-  'log': [logger.FORE_GREEN, 'log'],
+  'debug': [logger.FORE_GREEN, 'log'],
   'error': [logger.FORE_RED, 'error'],
   'warn': [logger.FORE_YELLOW, 'error']
 };
@@ -62,8 +62,8 @@ logger.info = function() {
   return logger.apply(null, ['info'].concat(slice.call(arguments)));
 };
 
-logger.log = function() {
-  return logger.apply(null, ['log'].concat(slice.call(arguments)));
+logger.debug = function() {
+  return logger.apply(null, ['debug'].concat(slice.call(arguments)));
 };
 
 logger.warn = function() {

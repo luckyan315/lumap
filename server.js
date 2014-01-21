@@ -49,7 +49,7 @@ exports.app = app;
 require('./route');
 
 server.listen(app.get('port'), function(){
-  logger.log('lumap http server is listening on port ' + app.get('port'));
+  logger.info('lumap http server is listening on port ' + app.get('port'));
 });
 
 /**
